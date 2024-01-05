@@ -114,7 +114,7 @@ header .toggle{
 
 main{color: white;}
 
-main >p{color: #F54768; font-weight: bold;}
+main > p{color: #F54768; font-weight: bold;}
 
 main .art{font-family: 'Balsamiq Sans', cursive; font-size: 45px; line-height: 75px;}
 
@@ -257,7 +257,7 @@ main .digitalColl ,main .description2 ,main .btns2{margin-top: 20px;}
     align-items: center;
     flex-wrap: wrap;
 }
-.main-section3 aside .box img{width: 250px;}
+.main-section3 aside .box img{width: 250px; height: auto;}
 
 .main-section3 aside .box:hover{transform: scale(1.25); z-index: 2;}
 
@@ -571,8 +571,13 @@ footer .part2 a{
 
 @media screen and (max-width:750px){
     section.bgGif{height: 100%;}
+
     body{
-        overflow-y: auto;
+        overflow: auto;
+    }
+    body > img{
+        width: 100%;
+        height: auto;
     }
    
     header{
@@ -612,6 +617,14 @@ footer .part2 a{
         width: 100%;
         height: auto;
     }
+    .main-section4 {
+        position: relative;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        padding: 0px 10px;
+    }
+    
     .main-section aside{margin-top: 100px;}
     
     footer{

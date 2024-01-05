@@ -1,0 +1,636 @@
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Comfortaa:wght@300&display=swap');
+
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    /*font-family: 'Balsamiq Sans', cursive;*/
+    font-family: 'Comfortaa', cursive;
+}
+/*body{overflow: hidden;}*/
+/*GIF BACKGROUND CSS*/
+section.bgGif{
+    background-image: url("GifBackground.gif");
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    isolation: isolate;
+    overflow-x: hidden;
+
+}
+section.bgGif::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(10px);
+}
+
+/*HEADER CSS*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    color: white;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(5px);
+    scroll-behavior: smooth;
+
+}
+header nav ul li{display: inline-block;margin: 0px 10px;}
+
+header nav ul li a{
+  color: white;
+  transition: all .4s;
+  padding: 10px 12px;
+  border-radius: 10px;
+  scroll-behavior: smooth;
+
+}
+nav ul li a:hover ,.home{background-color: #F54768;}
+
+header .join{
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 12px 15px;
+    color: white;
+    background: linear-gradient(to right ,#F54768 ,#FF9677);
+    transition: all.4s;
+    cursor: pointer;
+}
+header .join:hover{border: 1px solid #F54768;background: linear-gradient(to right ,transparent ,transparent);}
+
+/*MENU DROPDOWN CSS*/
+header .toggle{
+    display: none;
+    position: fixed;
+    top: 15px; right: 20px; 
+    width: 50px; height: 50px;
+    border-radius: 6px; cursor: pointer;
+}
+.toggle .hamburger{
+    position: relative;
+    top: 45%; left: 50%;
+    transform: translate(-50% ,-50%);
+    width: 32px;
+}
+.hamburger>span ,
+.hamburger>span::before,
+.hamburger>span::after{
+    display: block;
+    position: absolute;
+    width: 100%; height: 4px;
+    border-radius: 20px;
+    background-color: white;
+    transition: all .25s;
+}
+.hamburger >span::before{content: ""; top: 9px;}
+.hamburger >span::after{content: ""; top: -9px;}
+
+.toggle.active .hamburger >span{transform: rotate(45deg);}
+.toggle.active .hamburger >span::before{transform: rotate(0deg); top: 0%;}
+.toggle.active .hamburger >span::after{transform: rotate(90deg); top: 0%;}
+
+
+.main-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 30px;
+}
+
+main{color: white;}
+
+main >p{color: #F54768; font-weight: bold;}
+
+main .art{font-family: 'Balsamiq Sans', cursive; font-size: 45px; line-height: 75px;}
+
+main .description{line-height: 25px;}
+
+main .btns .opensea{
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 12px 20px;
+    color: white;
+    background: linear-gradient(to right ,#F54768 ,#FF9677);
+    transition: all.4s;
+    cursor: pointer;
+}
+main .opensea:hover{border: 1px solid #F54768;background: linear-gradient(to right ,transparent ,transparent);}
+
+main .art ,main .description ,main .btns{margin-top: 20px;}
+
+main .btns .icons{
+    border: 1px solid #F54768;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0px 10px;
+    transition: all .4s;
+}
+main .btns .icons:hover{background-color: #F54768;}
+
+aside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 500px;
+    position: relative;
+    float: right;
+    clear: both;
+}
+aside .box{
+    border-radius: 25px;
+    margin: 0px 2px;
+    overflow: hidden;
+    position: relative;
+    transition: all .5s;
+    cursor: pointer;
+}
+aside .box img{width: 150px; height: auto; transition: all .5s;}
+aside .box:hover{transform: scale(1.5); z-index: 2;}
+
+aside .box .overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top ,black ,transparent);
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: all .5s;
+}
+aside .box:hover .overlay{height: 100%;}
+
+aside .box .overlay .text{
+    color: white;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50% ,-50%);
+    text-align: center;
+}
+aside .box .overlay .text button{
+    margin-top: 10px;
+    padding: 10px 15px;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 2px;
+    font-size: 10px;
+    transition: all .4s;
+    cursor: pointer;
+}
+.box .overlay .text button i{color: cyan;}
+.box .overlay .text button:hover{background-color: white; color: black; border: 1px solid white;}
+
+/*Section 2 CSS*/
+.main-section2{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 30px;
+}
+main .digitalColl ,main .description2 ,main .btns2{margin-top: 20px;}
+
+.main-section2 main .digitalColl{font-family: 'Balsamiq Sans', cursive; font-size: 30px;}
+
+.main-section2 main .description2{line-height: 25px;}
+
+.main-section2 .btns2 button{
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 12px 22px;
+    color: white;
+    background: linear-gradient(to right ,#F54768 ,#FF9677);
+    transition: all.4s;
+    cursor: pointer;
+}
+.main-section2 .btns2 button:hover{border: 1px solid #F54768;background: linear-gradient(to right ,transparent ,transparent);}
+
+.main-section2 aside{
+    width: 50%;
+    height: auto;
+    position: relative;
+}
+.main-section2 aside .box{
+    margin: 0px 20px;
+}
+
+/*Section 3 CSS*/
+.main-section3{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 0px;
+    
+}
+.main-section3 .btns3 ,.main-section3 aside,.main-section3 main h1{margin-top: 20px;}
+
+.main-section3 main >h1{font-size: 40px; line-height: 50px;}
+
+.main-section3 aside{
+    width: 75%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.main-section3 aside .box img{width: 250px;}
+
+.main-section3 aside .box:hover{transform: scale(1.25); z-index: 2;}
+
+.main-section3 aside .box .therock,
+.main-section3 aside .box .lebron{width: 250px; height: 240px;}
+
+.main-section3 .btns3 button{
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 12px 22px;
+    color: white;
+    background: linear-gradient(to right ,#F54768 ,#FF9677);
+    transition: all.4s;
+    cursor: pointer;
+}
+.main-section3 .btns3 button:hover{border: 1px solid #F54768;background: linear-gradient(to right ,transparent ,transparent);}
+
+/*Section 4 CSS*/
+.main-section4 {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.main-section4 aside{display: block;text-align: center;}
+.main-section4 aside >p{color: #F54768; margin-bottom: 20px;}
+.main-section4 aside >h1{color :white;line-height: 50px; font-size: 40px;margin-top: 15px;}
+
+.main-section4 h2{color: #F54768;}
+
+.main-section4 .h1{color :white; font-size: 45px;margin-top: 15px;}
+
+.main-section4 p{color: white; line-height: 25px; margin-top: 20px; font-weight: 300;}
+
+.main-section4 main{margin-top: 75px;}
+
+.main-section4 .m1 ,.main-section4 .m3{text-align: right;}
+
+.main-section4 .m1 ,.main-section4 .m3{
+    border-right: 0px dashed transparent;
+    border-bottom: 2px solid white; 
+    border-bottom-right-radius: 50px;
+    padding: 0px 10px 25px 0px;
+    align-self: flex-start;
+    margin-left: 100px;
+}
+.main-section4 .m2 ,.main-section4 .m4{
+    border-top: 2px solid white;
+    border-left: 0px dashed white;
+    border-top-left-radius: 50px;
+    padding: 10px 0px 0px 25px;
+    align-self: flex-end;
+    margin-right: 100px;
+}
+
+/*Section 5 CSS*/
+.main-section5{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 100px 0px;
+    text-align: center;
+}
+.main-section5 .main5 >p{margin-bottom: 20px;}
+.main-section5 .main5>h1{font-size: 40px; line-height: 50px;}
+
+.main-section5 aside{
+    width: 50%;
+    height: auto;
+    position: relative;
+    padding: 50px 0px;
+    margin: 25px 0px;
+    border-top: 2px solid white;
+    border-left: 0px dashed white;
+    border-top-left-radius: 50px;
+    border-bottom: 2px solid white;
+    border-right: 0px dashed white;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    overflow: hidden;
+}
+
+.main-section5 aside .slider{
+    transition: all .4s;
+    display: flex;
+    margin-left: 1350px;
+    overflow: hidden;
+    transition: all .4s;
+    animation: slider 60s linear infinite;
+}
+
+@keyframes slider {0%{transform: translate3d(0,0,0);}100%{transform: translate3d(-1350px ,0px ,0px);}}
+
+.main-section5 aside .Box{
+    margin: 0px 10px;
+    border-radius: 10px;
+    position: relative;
+}
+.main-section5 aside .box1{
+    background-image: url("IMG_5383.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 650px;
+    height: 325px;
+}
+.main-section5 aside .box2{
+    background-image: url("phpbOXppb.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 650px;
+    height: 325px;
+}
+
+.main-section5 aside .box3{
+    background-image: url("Z5NX6TYC5ZBZBDOW5WPP3GTN6M.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 650px;
+    height: 325px;
+}
+.main-section5 aside .Box .Desctext{
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(to right ,#974063 ,transparent);
+    backdrop-filter: blur(10px);
+    color: white;
+    border-radius: 10px;
+    text-align: left;
+    padding: 5px 3px;
+}
+aside .Box .Desctext h2{
+    background:linear-gradient(to top , #41436A ,transparent); 
+    text-align: center; 
+    padding: 5px 0px;
+
+}
+
+aside .Box .Desctext p{margin-top: 25px;}
+
+aside .Box .Desctext .contact{margin-top: 25px;}
+
+aside .Box .Desctext .contact>h4{text-decoration: underline;}
+
+aside .Box .Desctext .contact>i{
+    margin-top: 10px;
+    background: linear-gradient(to right ,#41436A ,transparent);
+    color: white;
+    padding: 5px 3px;
+    cursor: pointer;
+}
+
+.main-section5 .btns4{margin-top: 30px;}
+
+.main-section5 .btns4 button{
+    border: 1px solid white;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 30px; height: 30px;
+    margin: 0px 5px;
+    text-align: center;
+    font-size: 16px;
+    color: transparent;
+    transition: all .4s;
+    cursor: pointer;
+}
+
+.main-section5 .discover{
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 12px 22px;
+    color: white;
+    font-size: bold;
+    background-color: #41436A;
+    transition: all.4s;
+    cursor: pointer;
+}
+.main-section5 .discover:hover{border: 1px solid #41436A;background: linear-gradient(to right ,transparent ,transparent);}
+
+
+/*SECTION 6 CSS*/
+.main-section6{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 55px 30px;
+}
+.main-section6 main{
+    margin-bottom: 50px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    
+}
+.main-section6 main p.faq{color: #F54768;}
+
+.main-section6 main h1{font-size: 40px; color: white; margin-top: 20px;}
+
+.main-section6 main p{color: white;line-height: 25px;margin-top: 25px;font-weight: 300;}
+
+.main-section6 aside{
+    display: flex;
+    flex-flow: column nowrap;
+    color: white;
+    font-weight: bold;
+}
+.main-section6 aside div{
+    border-bottom: 2px solid #F54768;
+    padding: 15px 10px;
+    align-self: flex-start;
+    font-size: 24px;
+}
+
+/*SECTION 7 CSS*/
+.main-section7{
+    padding: 55px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-section7 main{
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 20px;
+    width: 70%;
+    background: linear-gradient(to right ,#41436A ,#974063);
+}
+.main-section7 h1{font-size: 35px;}
+.main-section7 .news p{font-weight: 300; margin-top: 15px;}
+
+.main-section7 .form input{
+    border-radius: 5px;
+    border: 0px ;
+    width: 250px;
+    padding: 12px 20px;
+    margin-right: 10px;
+}
+.main-section7 .form input::placeholder{
+    font-weight: bold;
+    text-align: left;
+}
+.main-section7 button{
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 12px 22px;
+    color: white;
+    font-size: bold;
+    background-color: #41436A;
+    transition: all.4s;
+    cursor: pointer;
+}
+.main-section7 button:hover{border: 1px solid #41436A;background: linear-gradient(to right ,transparent ,transparent);}
+
+/*FOOTER CSS*/
+footer{
+    background-color: #2E2A52;
+    backdrop-filter: blur(10px);
+   
+}
+footer .part1 ,footer .part2{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    color: white;
+}
+footer .part1 h2{
+    text-align: center;
+}
+footer .part1 p{
+    font-weight: 300;
+    font-size: 15px;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+}
+
+footer .part1 aside{
+    display: flex;
+    flex-flow: column;
+}
+footer .part1 aside button.icons,
+footer .part1 aside button.JoinUs{
+    border: 1px solid #F54768;
+    background-color: #F54768;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 12px;
+    margin: 10px 5px;
+    cursor: pointer;
+    transition: all .4s;
+}
+footer .part1 aside button.icons:hover,
+footer .part1 aside button.JoinUs:hover{background-color: transparent; color: #F54768;}
+
+footer .part2 a{
+    color: white;
+    margin: 0px 10px;
+    font-size: 14px;
+}
+
+@media screen and (max-width:750px){
+    section.bgGif{height: 100%;}
+    body{
+        overflow-y: auto;
+    }
+   
+    header{
+        position: fixed;
+        background-color: rgba(0, 0, 0, .5);
+        backdrop-filter: blur(5px);
+        width: 100%;
+        z-index: 3;
+    }
+    header .toggle{display: block;}
+
+    header nav, header button{background-color: #41436A; position: absolute; top: 0;}
+
+    header nav{
+        right: -200px;
+        padding: 60px 0px;
+        border-radius: 10px;
+        width: 200px;
+        transition: all .4s;
+    }
+    .sidebar.active{right: 0px;}
+
+    header nav ul li{
+        display: block;
+        margin: 25px;
+        padding: 15px 0px;
+        border-bottom: 1px solid white;
+    }
+    header nav ul li .home{background-color: transparent;}
+    
+    header button{right: -100px;top: 525px;}
+    header button.active{right: 50px;}
+    
+    .main-section ,.main-section5 ,.main-section7 main,.main-section6{
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100%;
+        height: auto;
+    }
+    .main-section aside{margin-top: 100px;}
+    
+    footer{
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    footer .part2{
+        display: flex;
+        flex-flow: column nowrap;
+        text-align: center;
+    }
+    .main-section5 aside{
+        width: 90%;
+        height: auto;
+    }
+    .main-section5 aside .Box .Desctext{
+        width: 50%;
+        text-align: right;
+        
+        
+    }
+}
